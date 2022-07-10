@@ -1,0 +1,9 @@
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\bin\Debug\net48\TestMyGrasshopperAssembly.gha
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\bin\Debug\net48\TestMyGrasshopperAssembly.pdb
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.csproj.AssemblyReference.cache
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.AssemblyInfoInputs.cache
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.AssemblyInfo.cs
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.csproj.CoreCompileInputs.cache
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.gha
+D:\WorkData\TestCsharp\Rhino-Grasshopper-Learning\TestMyGrasshopperAssembly\obj\Debug\net48\TestMyGrasshopperAssembly.pdb

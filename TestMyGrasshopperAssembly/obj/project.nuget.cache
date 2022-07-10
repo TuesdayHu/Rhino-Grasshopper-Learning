@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wQkrrgu+y0quth/KKiKjMhBl142eyPqvI5eaj2t3Zp5fQweLiNWrSwAMHk7X0hx+atOZ6v5vBYAI/amRgZHo7Q==",
+  "success": true,
+  "projectFilePath": "D:\\WorkData\\TestCsharp\\Rhino-Grasshopper-Learning\\TestMyGrasshopperAssembly\\TestMyGrasshopperAssembly.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tuesday\\.nuget\\packages\\grasshopper\\7.13.21348.13001\\grasshopper.7.13.21348.13001.nupkg.sha512",
+    "C:\\Users\\tuesday\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512"
+  ],
+  "logs": []
+}
