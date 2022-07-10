@@ -1,5 +1,6 @@
 using Grasshopper;
 using Grasshopper.Kernel;
+using Rhino;
 using Rhino.Geometry;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,8 @@ namespace TestMyGrasshopperAssembly
             pManager.AddNumberParameter("Inner Radius", "R0", "Inner radius for spiral", GH_ParamAccess.item, 1.0);
             pManager.AddNumberParameter("Outer Radius", "R1", "Outer radius for spiral", GH_ParamAccess.item, 10.0);
             pManager.AddIntegerParameter("Turns", "T", "Number of turns between radii", GH_ParamAccess.item, 10);
+            //pManager.AddCurveParameter("Boundary", "B", "Boundary of the Basement", GH_ParamAccess.item);
+            //pManager.AddLineParameter("ReferenceLine", "RL", "RefLine if adding other direction", GH_ParamAccess.list, new Line());
 
             // If you want to change properties of certain parameters, 
             // you can use the pManager instance to access them by index:
@@ -55,50 +58,65 @@ namespace TestMyGrasshopperAssembly
             //pManager.HideParameter(0);
         }
 
-        /// <summary>
-        /// This is the method that actually does the work.
-        /// </summary>
-        /// <param name="DA">The DA object can be used to retrieve data from input parameters and 
-        /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            GH_DebugDescriptionWriter ghDebug = new GH_DebugDescriptionWriter();
+            RhinoApp.WriteLine("Hello Test2222222222");
+            ghDebug.WriteLine("Hello Test11111111111111");
             // First, we need to retrieve all data from the input parameters.
             // We'll start by declaring variables and assigning them starting values.
-            Plane plane = Plane.WorldXY;
-            double radius0 = 0.0;
-            double radius1 = 0.0;
-            int turns = 0;
+
+
+
+            //Plane plane = Plane.WorldXY;
+            //double radius0 = 0.0;
+            //double radius1 = 0.0;
+            //int turns = 0;
+
+            //Curve boundaryCrv = null;
+            //Line refLine = new Line();
 
             // Then we need to access the input parameters individually. 
             // When data cannot be extracted from a parameter, we should abort this method.
-            if (!DA.GetData(0, ref plane)) return;
-            if (!DA.GetData(1, ref radius0)) return;
-            if (!DA.GetData(2, ref radius1)) return;
-            if (!DA.GetData(3, ref turns)) return;
+
+
+            //if (!DA.GetData(0, ref plane)) return;
+            //if (!DA.GetData(1, ref radius0)) return;
+            //if (!DA.GetData(2, ref radius1)) return;
+            //if (!DA.GetData(3, ref boundaryCrv)) return;
+            //if (!DA.GetData(4, ref refLine)) return;
+
+
+
 
             // We should now validate the data and warn the user if invalid data is supplied.
-            if (radius0 < 0.0)
-            {
-                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Inner radius must be bigger than or equal to zero");
-                return;
-            }
-            if (radius1 <= radius0)
-            {
-                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Outer radius must be bigger than the inner radius");
-                return;
-            }
-            if (turns <= 0)
-            {
-                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Spiral turn count must be bigger than or equal to one");
-                return;
-            }
+            //if (radius0 < 0.0)
+            //{
+            //    AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Inner radius must be bigger than or equal to zero");
+            //    return;
+            //}
+            //if (radius1 <= radius0)
+            //{
+            //    AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Outer radius must be bigger than the inner radius");
+            //    return;
+            //}
+            //if (turns <= 0)
+            //{
+            //    AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Spiral turn count must be bigger than or equal to one");
+            //    return;
+            //}
 
             // We're set to create the spiral now. To keep the size of the SolveInstance() method small, 
             // The actual functionality will be in a different method:
-            Curve spiral = CreateSpiral(plane, radius0, radius1, turns);
+
+
+
+            //Curve spiral = CreateSpiral(plane, radius0, radius1, turns);
 
             // Finally assign the spiral to the output parameter.
-            DA.SetData(0, spiral);
+
+
+            //DA.SetData(0, spiral);
         }
 
         Curve CreateSpiral(Plane plane, double r0, double r1, Int32 turns)
