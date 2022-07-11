@@ -36,8 +36,8 @@ namespace TestMyGrasshopperAssembly
             pManager.AddNumberParameter("Inner Radius", "R0", "Inner radius for spiral", GH_ParamAccess.item, 1.0);
             pManager.AddNumberParameter("Outer Radius", "R1", "Outer radius for spiral", GH_ParamAccess.item, 10.0);
             pManager.AddIntegerParameter("Turns", "T", "Number of turns between radii", GH_ParamAccess.item, 10);
-            //pManager.AddCurveParameter("Boundary", "B", "Boundary of the Basement", GH_ParamAccess.item);
-            //pManager.AddLineParameter("ReferenceLine", "RL", "RefLine if adding other direction", GH_ParamAccess.list, new Line());
+            pManager.AddCurveParameter("Boundary", "B", "Boundary of the Basement", GH_ParamAccess.item);
+            pManager.AddLineParameter("ReferenceLine", "RL", "RefLine if adding other direction", GH_ParamAccess.list, new Line());
 
             // If you want to change properties of certain parameters, 
             // you can use the pManager instance to access them by index:
@@ -52,6 +52,7 @@ namespace TestMyGrasshopperAssembly
             // Use the pManager object to register your output parameters.
             // Output parameters do not have default values, but they too must have the correct access type.
             pManager.AddCurveParameter("Spiral", "S", "Spiral curve", GH_ParamAccess.item);
+            pManager.AddTextParameter("Out", "O", "Output", GH_ParamAccess.item);
 
             // Sometimes you want to hide a specific parameter from the Rhino preview.
             // You can use the HideParameter() method as a quick way:
@@ -65,26 +66,32 @@ namespace TestMyGrasshopperAssembly
             ghDebug.WriteLine("Hello Test11111111111111");
             // First, we need to retrieve all data from the input parameters.
             // We'll start by declaring variables and assigning them starting values.
+            Console.WriteLine("333");
+
+            AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, "test Erropr");
+
+            ghDebug.CreateBlock("Test output");
+            ghDebug.WriteLine("test");
+            ghDebug.CloseBlock();
+            ghDebug.WriteLogToFile("D:\test.txt");
 
 
+            Plane plane = Plane.WorldXY;
+            double radius0 = 0.0;
+            double radius1 = 0.0;
 
-            //Plane plane = Plane.WorldXY;
-            //double radius0 = 0.0;
-            //double radius1 = 0.0;
-            //int turns = 0;
-
-            //Curve boundaryCrv = null;
-            //Line refLine = new Line();
+            Curve boundaryCrv = null;
+            Line refLine = new Line();
 
             // Then we need to access the input parameters individually. 
             // When data cannot be extracted from a parameter, we should abort this method.
 
 
-            //if (!DA.GetData(0, ref plane)) return;
-            //if (!DA.GetData(1, ref radius0)) return;
-            //if (!DA.GetData(2, ref radius1)) return;
-            //if (!DA.GetData(3, ref boundaryCrv)) return;
-            //if (!DA.GetData(4, ref refLine)) return;
+            if (!DA.GetData(0, ref plane)) return;
+            if (!DA.GetData(1, ref radius0)) return;
+            if (!DA.GetData(2, ref radius1)) return;
+            if (!DA.GetData(3, ref boundaryCrv)) return;
+            if (!DA.GetData(4, ref refLine)) return;
 
 
 
@@ -116,7 +123,8 @@ namespace TestMyGrasshopperAssembly
             // Finally assign the spiral to the output parameter.
 
 
-            //DA.SetData(0, spiral);
+            DA.SetData(0, boundaryCrv);
+            DA.SetData(1, ghDebug);
         }
 
         Curve CreateSpiral(Plane plane, double r0, double r1, Int32 turns)
